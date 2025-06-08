@@ -11,14 +11,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header class="header">     <!-- Lado izquierdo: Logo + Botón de menú -->
+    <div class="header-left">
         <div class="logo">
-            <img src="logocinesunidos1.png" alt="logo little">
-            <button class="menu-btn">
-                &#9776; <!-- ícono Menu -->
-            </button>
+        <img src="logocinesunidos1.png" alt="Logo Cines Unidos">
         </div>
+        <div class="menu-header">
+            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- ESTE FALTABA -->
+            <div class="menu-dropdown" id="menuDropdown">
+                <a href="#">Inicio</a>
+                <a href="#">Cartelera</a>
+                <a href="#">Cines</a>
+                <a href="#">Caramelería</a>
+                <a href="#">Próximos</a>
+                <a href="#">Próximos Estrenos</a>
+                <a href="#">Prevenir</a>
+                <a href="#">Promociones y Precios</a>
+                <a href="#">Cines Unidos Club</a>
+                <a href="#">Comercialización</a>
+                <a href="#">Contactos</a>
+                <a href="#">Iniciar Sesión</a>
+            </div>
         
+            <script>
+                function toggleMenu() {
+                    const menu = document.getElementById("menuDropdown");
+                    menu.style.display = menu.style.display === "block" ? "none" : "block";
+                }
+
+                // Cerrar si se hace clic fuera
+                window.addEventListener("click", function(event) {
+                    const menuBtn = document.querySelector(".menu-btn");
+                    const dropdown = document.getElementById("menuDropdown");
+
+                    if (!menuBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.style.display = "none";
+                    }
+                });
+            </script>
+        </div>
+    </div>
+    <div class="header-right">   <!-- Lado derecho: Menú de ciudades -->
         <div class="dropdown">
             <button class="dropdown-btn" onclick="toggleDropdown()">Ciudad</button>
             <div class="dropdown-content" id="ciudadesDropdown">
@@ -29,32 +62,30 @@
                 <a href="#" onclick="selectCity(this)">Puerto La Cruz</a>
                 <a href="#" onclick="selectCity(this)">San Cristóbal</a>
             </div>
-            <script>
-                function toggleDropdown() {
-                    const dropdown = document.getElementById("ciudadesDropdown");
-                    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-                }
+        </div>
+        <script>
+            function toggleDropdown() {
+                const dropdown = document.getElementById("ciudadesDropdown");
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            }
 
-                function selectCity(element) {
-                    const selectedCity = element.textContent;
-                    document.querySelector(".dropdown-btn").textContent = selectedCity;
-
+            function selectCity(element) {
+                const selectedCity = element.textContent;
+                document.querySelector(".dropdown-btn").textContent = selectedCity;
                     // Cierra el menú automáticamente
-                    document.getElementById("ciudadesDropdown").style.display = "none";
+                document.getElementById("ciudadesDropdown").style.display = "none";
                 }
-
                 // Cierra el menú si haces clic fuera
                 window.addEventListener("click", function(event) {
-                    const btn = document.querySelector(".dropdown-btn");
-                    const menu = document.getElementById("ciudadesDropdown");
+                const btn = document.querySelector(".dropdown-btn");
+                const menu = document.getElementById("ciudadesDropdown");
 
-                    if (!btn.contains(event.target) && !menu.contains(event.target)) {
-                    menu.style.display = "none";
-                    }
-                });
-            </script>
-        </div>
-
+                if (!btn.contains(event.target) && !menu.contains(event.target)) {
+                menu.style.display = "none";
+                }
+               });
+        </script>
+    </div>
     </header>
 
     <nav>
