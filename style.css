@@ -18,31 +18,31 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  /*align-items: center;*/
+  padding: 15px 30px;
 }
 
 .header-left {
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   gap: 25px; /* espacio entre logo y menú */
 }
 
 .logo img {
   height: 40px;
-  align-items: center;
+  gap: 20px;
+  /*align-items: center;*/
 }
 
 .menu-btn {
   font-size: 24px;
+  gap: 20px;
   align-items: center;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
 }
-
-
 
 /*    Menud de Ciudades   */
 .dropdown {                     
