@@ -20,24 +20,28 @@
         <div class="menu-header">
             <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- ESTE FALTABA -->
             <div class="menu-dropdown" id="menuDropdown">
-                <a href="#"><i class="fa fa-home"></i></a>
-                <a href="#"><i class="fa fa-film"></i></a>
-                <a href="#"><i class="fa fa-map-marker-alt"></i></a>
-                <a href="#"><i class="fa fa-candy-cane"></i></a>
-                <a href="#"><i class="fa fa-calendar"></i></a>
-                <a href="#"><i class="fa fa-clock"></i></a>
-                <a href="#"><i class="fa fa-heartbeat"></i></a>
-                <a href="#"><i class="fa fa-tags"></i></a>
-                <a href="#"><i class="fa fa-user-friends"></i></a>
-                <a href="#"><i class="fa fa-handshake"></i></a>
-                <a href="#"><i class="fa fa-envelope"></i></a>
-                <a href="#"><i class="fa fa-sign-in-alt"></i></a>
-            </div>
+  <a href="#"><i class="fa fa-home"></i><span>Inicio</span></a>
+  <a href="#"><i class="fa fa-film"></i><span>Cartelera</span></a>
+  <a href="#"><i class="fa fa-map-marker-alt"></i><span>Cines</span></a>
+  <a href="#"><i class="fa fa-candy-cane"></i><span>Caramelería</span></a>
+            <a href="#"><i class="fa fa-calendar"></i><span>Próximos</span></a>
+            <a href="#"><i class="fa fa-clock"></i><span>Estrenos</span></a>
+            <a href="#"><i class="fa fa-heartbeat"></i><span>Prevenir</span></a>
+            <a href="#"><i class="fa fa-tags"></i><span>Promos</span></a>
+            <a href="#"><i class="fa fa-user-friends"></i><span>Club</span></a>
+            <a href="#"><i class="fa fa-handshake"></i><span>Comercial</span></a>
+            <a href="#"><i class="fa fa-envelope"></i><span>Contacto</span></a>
+            <a href="#"><i class="fa fa-sign-in-alt"></i><span>Ingresar</span></a>
+        </div>
         
             <script>
                 function toggleMenu() {
                     const menu = document.getElementById("menuDropdown");
-                    menu.style.display = menu.style.display === "block" ? "none" : "block";
+                    if (menu.style.display === "flex") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "flex"; // <--- AQUÍ el cambio clave
+                    }
                 }
 
                 // Cerrar si se hace clic fuera
