@@ -19,20 +19,12 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 10px 10px;
   position: fixed;          /* Fijo arriba */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999; /* Por encima de otros elementos */
-}
-
-.header {
-  background-color: #141414;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px;
 }
 
 .logo img {
@@ -59,31 +51,42 @@ body {
   align-items: center;
 }
 
+.menu-dropdown {
+  display: none;
+  flex-direction: row; 
+  background-color: #141414;
+  position: initial;
+  padding: 10px 10px;
+  z-index: 100;
+  width: auto;
+  white-space: nowrap;
+  gap: 10px;
+}
+
 .menu-dropdown a {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column;         /* ← Esto apila ícono y texto */
   align-items: center;
-  color: #e9e6e7;
+  justify-content: center;
   text-decoration: none;
-  font-size: 20px;
-  padding: 8px;
-  transition: color 0.3s;
-  width: 70px; /* opcional, para uniformidad */
+  color: #e9e6e7;
+  font-size: 14px;
+  width: 60px;                    /* ancho fijo para alinear ítems */
+  gap: 4px;                       /* espacio entre icono y texto */
 }
 
 .menu-dropdown a i {
   font-size: 24px;
-  margin-bottom: 4px;
 }
 
 .menu-dropdown a span {
   font-size: 12px;
   text-align: center;
+  display: block;
 }
 
 .menu-dropdown a:hover {
-  color: #e9e6e7;
+  color: #cea2b0;
 }
 
 
@@ -99,7 +102,49 @@ body {
 }
 
 .dropdown-btn {
-  background-color: #000;
+  background-color: #141414;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px #141414(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #141414;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+/*    Menud de Ciudades   */
+.header-right {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* espacio entre logo y menú */
+}
+
+.dropdown {                     
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: #141414;
   color: white;
   padding: 30px 45px;
   font-size: 16px;
@@ -117,7 +162,7 @@ body {
 }
 
 .dropdown-content a {
-  color: black;
+  color: #141414;
   padding: 10px 14px;
   text-decoration: none;
   display: block;
@@ -131,7 +176,7 @@ body {
 .main-container {
     background-color: #807676;
     position: relative;
-    height: 550px;
+    height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,6 +214,6 @@ body {
 .main-container h2 {
     font-size: 36px;
     color: white;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 4px #141414(0,0,0,0.6);
 }
 
