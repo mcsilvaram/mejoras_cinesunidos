@@ -9,6 +9,7 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   align-items: center;
   align-content: center;
+  padding-top: 100px; /* ajusta según el alto del header */
   margin: 0;
   padding: 0;
 }
@@ -18,11 +19,24 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
+  padding: 20px 20px;
+  position: fixed;          /* Fijo arriba */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Por encima de otros elementos */
+}
+
+.header {
+  background-color: #141414;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
 }
 
 .logo img {
-  height: 45px;
+  height: 65px;
   gap: 20px;
 }
 
@@ -45,38 +59,41 @@ body {
   align-items: center;
 }
 
-.menu-dropdown {
-  display: none;
-  flex-direction: row; /* HORIZONTAL */
-  background-color: #141414;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  padding: 10px 15px;
-  border: 1px solid #444;
-  z-index: 100;
-  width: auto;
-  white-space: nowrap;
-  gap: 15px;
-}
-
 .menu-dropdown a {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #800020; /* vino */
+  color: #e9e6e7;
   text-decoration: none;
   font-size: 20px;
   padding: 8px;
   transition: color 0.3s;
+  width: 70px; /* opcional, para uniformidad */
+}
+
+.menu-dropdown a i {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.menu-dropdown a span {
+  font-size: 12px;
+  text-align: center;
 }
 
 .menu-dropdown a:hover {
-  color: #a11c39;
+  color: #e9e6e7;
 }
 
 
 /*    Menud de Ciudades   */
+.header-right {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* espacio entre logo y menú */
+}
+
 .dropdown {                     
   position: relative;
 }
@@ -84,11 +101,10 @@ body {
 .dropdown-btn {
   background-color: #000;
   color: white;
-  padding: 10px 16px;
+  padding: 30px 45px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 .dropdown-content {
