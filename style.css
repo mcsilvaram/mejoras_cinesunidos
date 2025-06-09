@@ -184,8 +184,7 @@ body {
     overflow: hidden;
 }
 
-/* Marca de agua (fondo tenue detrás del contenido) */
-.main-container::before {
+.main-container::before {         /* Marca de agua (fondo tenue detrás del contenido) */
     content: "";
     position: absolute;
     top: 0; left: 0;
@@ -215,5 +214,83 @@ body {
     font-size: 36px;
     color: white;
     text-shadow: 1px 1px 4px #141414(0,0,0,0.6);
+}
+
+/*      Carrusel Peliculas de Cartelera    */
+.carousel-section {
+  background-color: #141414;
+  padding: 20px;
+  color: white;
+  overflow: hidden;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.carousel-header h2,
+.carousel-header .ver-mas {
+  margin: 0;
+  font-size: 28px;
+  color: white;
+}
+
+.carousel-header .ver-mas {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.carousel img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
+}
+
+.carousel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-btn.left {
+  position: absolute;
+  left: 0;
+}
+
+.carousel-btn.right {
+  position: absolute;
+  right: 0;
 }
 
