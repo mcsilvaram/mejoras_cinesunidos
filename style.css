@@ -106,48 +106,6 @@ body {
 .dropdown-btn {
   background-color: #141414;
   color: white;
-  padding: 10px 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px #141414(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: #141414;
-  padding: 10px 14px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-
-/*    Menud de Ciudades   */
-.header-right {
-  display: flex;
-  justify-content: center;
-  gap: 25px; /* espacio entre logo y menú */
-}
-
-.dropdown {                     
-  position: relative;
-}
-
-.dropdown-btn {
-  background-color: #141414;
-  color: white;
   padding: 30px 45px;
   font-size: 16px;
   border: none;
@@ -308,7 +266,7 @@ body {
 }
 
 .estrenos-swiper {
-  width: 25%;
+  width: 100%;
   max-width: 1000px;
 }
 
@@ -328,19 +286,19 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 40px 20px;
+  padding: 20px 20px;
   background-color: #f5f5f5; /* Opcional, para diferenciar la sección */
   flex-wrap: wrap; /* Se adapta en pantallas pequeñas */
 }
 
 .final img {
-  max-width: 100%;
+  /*max-width: 100%;*/
   height: auto;
-  border-radius: 12px;
+  /*border-radius: 12px;*/
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  width: 30%;
-  min-width: 250px;
+  width: 100%;
+  /*min-width: 250px;*/
 }
 
 .final img:hover {
