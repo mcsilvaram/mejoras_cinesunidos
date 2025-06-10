@@ -1,13 +1,15 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
+
+/*--- Encabezado -----*/
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   align-items: center;
   align-content: center;
-  padding-top: 100px;
+  padding-top: 100px; /* ajusta según el alto del header */
   margin: 0;
   padding: 0;
 }
@@ -18,11 +20,11 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px 10px;
-  position: fixed;
+  position: fixed;          /* Fijo arriba */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 999; /* Por encima de otros elementos */
 }
 
 .logo img {
@@ -32,16 +34,17 @@ body {
 
 .header-left {
   display: flex;
-  gap: 25px;
+  gap: 25px; /* espacio entre logo y menú */
 }
 
 .menu-btn {
   background: none;
   border: none;
-  cursor: pointer;
+  font-size: 24px;
   color: white;
-  font-size: 28px;
+  cursor: pointer;
   display: block;
+  font-size: 28px;
 }
 
 .menu-header {
@@ -52,7 +55,7 @@ body {
 
 .menu-dropdown {
   display: none;
-  flex-direction: row;
+  flex-direction: row; 
   background-color: #141414;
   position: initial;
   padding: 10px 10px;
@@ -64,17 +67,14 @@ body {
 
 .menu-dropdown a {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;         /* ← Esto apila ícono y texto */
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: #e9e6e7;
   font-size: 14px;
-  width: 60px;
-  gap: 4px;
-}
-.menu-dropdown a:hover {
-  color: #cea2b0;
+  width: 60px;                    /* ancho fijo para alinear ítems */
+  gap: 4px;                       /* espacio entre icono y texto */
 }
 
 .menu-dropdown a i {
@@ -87,13 +87,61 @@ body {
   display: block;
 }
 
+.menu-dropdown a:hover {
+  color: #cea2b0;
+}
+
+
+/*    Menud de Ciudades   */
 .header-right {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 25px; /* espacio entre logo y menú */
 }
 
-.dropdown {
+.dropdown {                     
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: #141414;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px #141414(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #141414;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+/*    Menud de Ciudades   */
+.header-right {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* espacio entre logo y menú */
+}
+
+.dropdown {                     
   position: relative;
 }
 
@@ -121,54 +169,56 @@ body {
   text-decoration: none;
   display: block;
 }
+
 .dropdown-content a:hover {
   background-color: #ddd;
 }
 
+/*     Main      */
 .main-container {
-  background-color: #807676;
-  position: relative;
-  height: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+    background-color: #807676;
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
 }
 
-.main-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("movie-poster-background.webp");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.35;
-  z-index: 0;
+.main-container::before {         /* Marca de agua (fondo tenue detrás del contenido) */
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('movie-poster-background.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35; /* Ajusta la intensidad del "marca de agua" */
+    z-index: 0;
 }
 
+/* Contenido por encima del fondo */
 .content-overlay {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .main-logo {
-  width: 780px;
+    width: 780px;
 }
 
 .main-container h2 {
-  font-size: 36px;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    font-size: 36px;
+    color: white;
+    text-shadow: 1px 1px 4px #141414(0,0,0,0.6);
 }
 
+/*      Carrusel Peliculas de Cartelera    */
 .carousel-section {
   background-color: #141414;
   padding: 20px;
@@ -185,9 +235,9 @@ body {
 
 .carousel-header h2,
 .carousel-header .ver-mas {
+  margin: 0;
   font-size: 28px;
   color: white;
-  margin: 0;
 }
 
 .carousel-header .ver-mas {
@@ -207,12 +257,12 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 10px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
 }
 
 .carousel::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari */
 }
 
 .carousel img {
@@ -222,6 +272,7 @@ body {
   flex-shrink: 0;
   transition: transform 0.3s;
 }
+
 .carousel img:hover {
   transform: scale(1.05);
 }
@@ -246,6 +297,8 @@ body {
   right: 0;
 }
 
+/*    script de Swiper    */
+
 .estrenos-section {
   width: 100%;
   display: flex;
@@ -267,32 +320,34 @@ body {
 .swiper-slide img {
   width: 100%;
   border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
+/*  Section Final   */
 .final {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 40px 20px;
-  background-color: #f5f5f5;
-  flex-wrap: wrap;
+  background-color: #f5f5f5; /* Opcional, para diferenciar la sección */
+  flex-wrap: wrap; /* Se adapta en pantallas pequeñas */
 }
 
 .final img {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   width: 30%;
   min-width: 250px;
 }
+
 .final img:hover {
   transform: scale(1.03);
 }
 
+/*    FOOTER    */
 .footer {
   background: linear-gradient(to right, #9b255a, #6e0d77);
   color: white;
@@ -329,6 +384,7 @@ body {
   margin: 0.3rem 0;
   cursor: pointer;
 }
+
 .footer-column p:hover {
   text-decoration: underline;
 }
@@ -356,88 +412,113 @@ hr {
   height: 24px;
 }
 
+/* responsive */
 @media (max-width: 768px) {
+
   .header {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
   }
+
   .header-left,
   .header-right {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
   }
+
   .logo img {
     height: 50px;
     margin-bottom: 10px;
   }
+
   .menu-dropdown {
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
     padding: 10px 0;
   }
+
   .menu-dropdown a {
-    width: 25%;
+    width: 25%; /* 4 ítems por fila en móviles */
   }
-  .dropdown,
-  .dropdown-btn,
-  .dropdown-content {
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-btn {
     width: 100%;
     text-align: left;
   }
+
+  .dropdown-content {
+    width: 100%;
+  }
+
   .main-container {
     padding: 20px;
     text-align: center;
   }
+
   .carousel-container {
     overflow-x: scroll;
     flex-wrap: nowrap;
     position: relative;
   }
+
   .carousel {
     display: flex;
     gap: 10px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
   }
+
   .carousel img {
     flex-shrink: 0;
     width: 160px;
     scroll-snap-align: start;
   }
+
   .carousel-btn {
     display: none;
   }
+
   .carousel-header {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .estrenos-section .swiper-slide img {
     width: 100%;
     height: auto;
   }
+
   .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
   }
+
   .footer-column {
     width: 100%;
   }
+
   .store-column {
     display: flex;
     justify-content: center;
     gap: 10px;
   }
+
   .social-icons {
     justify-content: center;
   }
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
