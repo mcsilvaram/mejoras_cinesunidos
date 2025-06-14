@@ -1,80 +1,76 @@
 * {
-    margin: 0;
-    padding: 0;
-}
-
-
-/*--- Encabezado -----*/
-body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  align-items: center;
-  align-content: center;
-  padding-top: 100px; /* ajusta según el alto del header */
   margin: 0;
   padding: 0;
 }
 
+/* Encabezado */
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  align-items: center;
+  align-content: center;
+  /*padding-top: 0px;*/
+}
+
 .header {
   background-color: #141414;
-  color: white;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   padding: 10px 10px;
-  position: fixed;          /* Fijo arriba */
+  position: absolute;   
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999; /* Por encima de otros elementos */
+  z-index: 999;
 }
 
 .logo img {
   height: 65px;
-  gap: 20px;
 }
 
 .header-left {
   display: flex;
-  gap: 25px; /* espacio entre logo y menú */
+  gap: 25px;
+  align-items: center;
+}
+
+.menu-header {
+  display: flex;
+  position: relative;
 }
 
 .menu-btn {
   background: none;
   border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  display: block;
   font-size: 28px;
-}
-
-.menu-header {
-  position: relative;
-  display: flex;
-  align-items: center;
+  color: #fff;
+  cursor: pointer;
 }
 
 .menu-dropdown {
-  display: none;
-  flex-direction: row; 
+  display: none; 
   background-color: #141414;
-  position: initial;
+  /*position: initial;*/
   padding: 10px 10px;
   z-index: 100;
   width: auto;
   white-space: nowrap;
-  gap: 10px;
+}
+
+.menu-header:hover .menu-dropdown {
+  display: flex;
 }
 
 .menu-dropdown a {
-  display: flex;
-  flex-direction: column;         /* ← Esto apila ícono y texto */
+  color: #e9e6e7;
+  text-decoration: none;
+  font-size: 14px;
+  width: 60px;
+  gap: 4px;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  color: #e9e6e7;
-  font-size: 14px;
-  width: 60px;                    /* ancho fijo para alinear ítems */
-  gap: 4px;                       /* espacio entre icono y texto */
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-dropdown a i {
@@ -84,42 +80,40 @@ body {
 .menu-dropdown a span {
   font-size: 12px;
   text-align: center;
-  display: block;
 }
 
 .menu-dropdown a:hover {
   color: #cea2b0;
 }
 
-
-/*    Menud de Ciudades   */
+/* Menu Ciudades */
 .header-right {
   display: flex;
   justify-content: center;
-  gap: 25px; /* espacio entre logo y menú */
+  gap: 25px;
 }
 
-.dropdown {                     
+.dropdown {
   position: relative;
 }
 
 .dropdown-btn {
   background-color: #141414;
-  color: white;
-  padding: 10px 16px;
-  font-size: 16px;
+  color: #fff;
+  padding: 20px 60px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 180px;
-  box-shadow: 0px 8px 16px #141414(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px #00000033;
   z-index: 1;
+  display: none;
 }
 
 .dropdown-content a {
@@ -133,45 +127,8 @@ body {
   background-color: #ddd;
 }
 
-
-/*    Menud de Ciudades   */
-.header-right {
-  display: flex;
-  justify-content: center;
-  gap: 25px; /* espacio entre logo y menú */
-}
-
-.dropdown {                     
-  position: relative;
-}
-
-.dropdown-btn {
-  background-color: #141414;
-  color: white;
-  padding: 30px 45px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: #141414;
-  padding: 10px 14px;
-  text-decoration: none;
+.dropdown:hover .dropdown-content {
   display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
 }
 
 /*     Main      */
@@ -188,9 +145,10 @@ body {
 
 .main-container::before {         /* Marca de agua (fondo tenue detrás del contenido) */
     content: "";
-    position: absolute;
+    position: initial;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     background-image: url('movie-poster-background.webp');
     background-size: cover;
     background-position: center;
@@ -200,7 +158,7 @@ body {
 
 /* Contenido por encima del fondo */
 .content-overlay {
-    position: relative;
+    position: absolute;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -217,20 +175,43 @@ body {
     color: white;
     text-shadow: 1px 1px 4px #141414(0,0,0,0.6);
 }
+/*    script de Swiper    */
 
-/*      Carrusel Peliculas de Cartelera    */
+.estrenos-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  padding: 30px 0px;
+}
+
+.estrenos-swiper {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+/*      Carrusel Peliculas     */
 .carousel-section {
   background-color: #141414;
-  padding: 20px;
+  padding: 30px 80px;
   color: white;
-  overflow: hidden;
 }
 
 .carousel-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .carousel-header h2,
@@ -247,22 +228,19 @@ body {
 
 .carousel-container {
   position: relative;
-  display: flex;
-  align-items: center;
-  overflow: auto;
 }
 
 .carousel {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
   gap: 10px;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .carousel::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }
 
 .carousel img {
@@ -270,57 +248,12 @@ body {
   height: auto;
   border-radius: 8px;
   flex-shrink: 0;
+  scroll-snap-align: start;
   transition: transform 0.3s;
 }
 
 .carousel img:hover {
   transform: scale(1.05);
-}
-
-.carousel-btn {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 28px;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.carousel-btn.left {
-  position: absolute;
-  left: 0;
-}
-
-.carousel-btn.right {
-  position: absolute;
-  right: 0;
-}
-
-/*    script de Swiper    */
-
-.estrenos-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: #000;
-  padding: 30px 0;
-}
-
-.estrenos-swiper {
-  width: 25%;
-  max-width: 1000px;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-
-.swiper-slide img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
 }
 
 /*  Section Final   */
@@ -329,15 +262,15 @@ body {
   justify-content: center;
   gap: 20px;
   padding: 40px 20px;
-  background-color: #f5f5f5; /* Opcional, para diferenciar la sección */
-  flex-wrap: wrap; /* Se adapta en pantallas pequeñas */
+  background-color: #f5f5f5;
+  flex-wrap: wrap;
 }
 
 .final img {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
   transition: transform 0.3s ease;
   width: 30%;
   min-width: 250px;
@@ -390,7 +323,7 @@ body {
 }
 
 hr {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgb(255 255 255 / 0.3);
   margin: 1.5rem 0;
 }
 
@@ -440,26 +373,10 @@ hr {
     padding: 10px 0;
   }
 
-  .menu-dropdown a {
-    width: 25%; /* 4 ítems por fila en móviles */
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-btn {
-    width: 100%;
-    text-align: left;
-  }
-
-  .dropdown-content {
-    width: 100%;
-  }
-
-  .main-container {
-    padding: 20px;
-    text-align: center;
+  .carousel img {
+    flex-shrink: 0;
+    width: 160px;
+    scroll-snap-align: start;
   }
 
   .carousel-container {
@@ -468,20 +385,7 @@ hr {
     position: relative;
   }
 
-  .carousel {
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-  }
-
-  .carousel img {
-    flex-shrink: 0;
-    width: 160px;
-    scroll-snap-align: start;
-  }
-
-  .carousel-btn {
+  .carousel::-webkit-scrollbar {
     display: none;
   }
 
