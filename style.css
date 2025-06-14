@@ -36,58 +36,6 @@ body {
   align-items: center;
 }
 
-.menu-header {
-  display: flex;
-  position: relative;
-}
-
-.menu-btn {
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.menu-dropdown {
-  display: none; 
-  background-color: #141414;
-  /*position: initial;*/
-  padding: 10px 10px;
-  z-index: 100;
-  width: auto;
-  white-space: nowrap;
-}
-
-.menu-header:hover .menu-dropdown {
-  display: flex;
-}
-
-.menu-dropdown a {
-  color: #e9e6e7;
-  text-decoration: none;
-  font-size: 14px;
-  width: 60px;
-  gap: 4px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-dropdown a i {
-  font-size: 24px;
-}
-
-.menu-dropdown a span {
-  font-size: 12px;
-  text-align: center;
-}
-
-.menu-dropdown a:hover {
-  color: #cea2b0;
-}
-
 /* Menu Ciudades */
 .header-right {
   display: flex;
@@ -133,7 +81,59 @@ body {
   display: block;
 }
 
-/*     Main      */
+.menu-header {
+  display: flex;
+  position: relative;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  display: none; 
+  background-color: #141414;
+  position: initial;
+  padding: 10px 10px;
+  z-index: 100;
+  width: auto;
+  white-space: nowrap;
+}
+
+.menu-header:hover .menu-dropdown {
+  display: flex;
+}
+
+.menu-dropdown a {
+  color: #e9e6e7;
+  text-decoration: none;
+  font-size: 14px;
+  width: 60px;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-dropdown a i {
+  font-size: 24px;
+}
+
+.menu-dropdown a span {
+  font-size: 12px;
+  text-align: center;
+}
+
+.menu-dropdown a:hover {
+  color: #cea2b0;
+}
+
+/*     Main - letrero cines unidos      */
 .main-container {
     background-color: #807676;
     position: relative;
@@ -158,8 +158,7 @@ body {
     z-index: 0;
 }
 
-/* Contenido por encima del fondo */
-.content-overlay {
+.content-overlay {          /* Contenido por encima del fondo */
     position: absolute;
     z-index: 1;
     display: flex;
@@ -181,7 +180,7 @@ body {
 .estrenos-section {
   width: 100%;
   padding: 30px 0;
-  background: #000;
+  background: #000022;
 }
 
 .estrenos-swiper {
@@ -199,6 +198,8 @@ body {
   border-radius: 10px;
   object-fit: cover;
 }
+
+/*    proximos estrenos     */
 
 .carousel-section {
   position: relative;
@@ -224,6 +225,11 @@ body {
   cursor: pointer;
 }
 
+.carousel-container {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
 .carousel-section {
   position: absoluta;
   padding: 30px 0;
@@ -236,7 +242,7 @@ body {
 
 .carousel {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .carousel img {
@@ -245,6 +251,7 @@ body {
   flex: 0 0 auto;
 }
 
+/* botones de scroll  */
 .carousel-prev,
 .carousel-next {
   position: absolute;
@@ -259,9 +266,9 @@ body {
   z-index: 1000;
 }
 
-.carousel img:hover {
+/*.carousel img:hover {
   transform: scale(1.05);
-}
+}*/
 
 .carousel-prev {
   left: 10px;
