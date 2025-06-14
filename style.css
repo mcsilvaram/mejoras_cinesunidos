@@ -8,6 +8,8 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   align-items: center;
   align-content: center;
+  background: #000022;
+  color: #fff;
   /*padding-top: 0px;*/
 }
 
@@ -175,14 +177,13 @@ body {
     color: white;
     text-shadow: 1px 1px 4px #141414(0,0,0,0.6);
 }
-/*    script de Swiper    */
 
 .estrenos-section {
   width: 100%;
   display: flex;
   justify-content: center;
   background-color: #000;
-  padding: 30px 0px;
+  padding: 30px 0;
 }
 
 .estrenos-swiper {
@@ -200,11 +201,12 @@ body {
   border-radius: 10px;
   object-fit: cover;
 }
-/*      Carrusel Peliculas     */
+
+/** Proximos estrenos  **/
 .carousel-section {
   background-color: #141414;
   padding: 30px 80px;
-  color: white;
+  color: #ffffff;
 }
 
 .carousel-header {
@@ -218,7 +220,6 @@ body {
 .carousel-header .ver-mas {
   margin: 0;
   font-size: 28px;
-  color: white;
 }
 
 .carousel-header .ver-mas {
@@ -228,19 +229,21 @@ body {
 
 .carousel-container {
   position: relative;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
 }
 
 .carousel {
   display: flex;
   gap: 10px;
-  overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
 }
 
 .carousel img {
@@ -249,7 +252,7 @@ body {
   border-radius: 8px;
   flex-shrink: 0;
   scroll-snap-align: start;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .carousel img:hover {
