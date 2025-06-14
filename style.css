@@ -180,10 +180,8 @@ body {
 
 .estrenos-section {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: #000;
   padding: 30px 0;
+  background: #000;
 }
 
 .estrenos-swiper {
@@ -203,9 +201,9 @@ body {
 }
 
 .carousel-section {
-  background-color: #141414;
-  padding: 30px 80px;
-  color: #ffffff;
+  position: relative;
+  padding: 30px 0;
+  background: #000022;
 }
 
 .carousel-header {
@@ -226,11 +224,10 @@ body {
   cursor: pointer;
 }
 
-.carousel-container {
+.carousel-section {
   position: relative;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  padding: 30px 0;
+  background: #000022;
 }
 
 .carousel-container::-webkit-scrollbar {
@@ -240,22 +237,43 @@ body {
 .carousel {
   display: flex;
   gap: 10px;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-bottom: 20px;
 }
 
 .carousel img {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
+  width: 160px;
+  flex: 0 0 auto;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #000022;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 .carousel img:hover {
   transform: scale(1.05);
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: #fff5cc;
 }
 
 /*  Section Final   */
