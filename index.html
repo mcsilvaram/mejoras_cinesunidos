@@ -61,15 +61,17 @@
 
         <section class="estrenos-section">
             <div class="swiper estrenos-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005387.jpg" alt="Lilo & Stitch"></div>
-                    <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005411.jpg" alt="Como entrenar a tu dragon"></div>
-                    <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005564.jpg" alt="Encerrado"></div>
-                    <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005483.jpg" alt="Bailarina"></div>
-                    <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005476.jpg" alt="Destino Final"></div>
-                    <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00004308.jpg" alt="los caimanes"></div>
-                    <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005390.jpg" alt="Misión Imposible"></div>
-               </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005387.jpg" alt="Lilo & Stitch"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005411.jpg" alt="Cómo entrenar a tu dragón"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005564.jpg" alt="Encerrado"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005483.jpg" alt="Bailarina"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005476.jpg" alt="Destino Final"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00004308.jpg" alt="Caimanes"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005390.jpg" alt="Misión Imposible"></div>
+            </div>
+            <!-- Paginacion opcional -->
+            <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -142,89 +144,73 @@
                 </div>
             </div>
             <button class="carousel-next" data-target="#carousel-prevenir">></button>
-        </section>
-
-        <script>
-            // Estrenos
+        </section>           
+    </main>
+        script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
             new Swiper('.estrenos-swiper', {
-            loop: true,
-            autoplay: {
+                loop: true,
+                autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
-            },
-            slidesPerView: 1,
-            spaceBetween: 30,
-            pagination: {
+                },
+                slidesPerView: 1,
+                spaceBetween: 30,
+                pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-            },
-            effect: 'slide',
+                },
+                effect: 'slide',
             });
+            </script>
 
-            // Funcionalidad de scroll con botones
-            document.querySelectorAll('.carousel-prev, .carousel-next').forEach((btn) => {
-            btn.addEventListener('click',(e) => {
-                const containerId = e.target.dataset.target;
-                const container = document.querySelector(containerId);
-                if (container) {
-                const scrollStep = 160;
-                if (e.target.classList.contains('carousel-prev')) {
-                    container.scrollLeft -= scrollStep;
-                } else {
-                    container.scrollLeft += scrollStep;
-                }
-                }
-            });
-            });
-        </script>
-    </main
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-column logo-column">
-          <img src="https://stcinesunidoswebshared.blob.core.windows.net/img/logo-white.png" alt="Cines Unidos Logo" class="footer-logo">
+        <!-- Footer -->
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column logo-column">
+            <img src="https://stcinesunidoswebshared.blob.core.windows.net/img/logo-white.png" alt="Cines Unidos Logo" class="footer-logo">
+            </div>
+
+            <div class="footer-column">
+            <p>Inicio</p>
+            <p>Caramelería</p>
+            <p>Promociones Y Precios</p>
+            <p>Contacto</p>
+            </div>
+
+            <div class="footer-column">
+            <p>Cartelera</p>
+            <p>Próximos Estrenos</p>
+            <p>Cines Unidos Club</p>
+            </div>
+
+            <div class="footer-column">
+            <p>Cines</p>
+            <p>Prevenir</p>
+            <p>Comercialización</p>
+            </div>
+
+            <div class="footer-column store-column">
+                <a href="https://www.apple.com/la/app-store/">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="store-icon"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-icon"></a>
+            </div>
         </div>
 
-        <div class="footer-column">
-          <p>Inicio</p>
-          <p>Caramelería</p>
-          <p>Promociones Y Precios</p>
-          <p>Contacto</p>
-        </div>
+        <hr>
 
-        <div class="footer-column">
-          <p>Cartelera</p>
-          <p>Próximos Estrenos</p>
-          <p>Cines Unidos Club</p>
-        </div>
-
-        <div class="footer-column">
-          <p>Cines</p>
-          <p>Prevenir</p>
-          <p>Comercialización</p>
-        </div>
-
-        <div class="footer-column store-column">
-            <a href="https://www.apple.com/la/app-store/">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="store-icon"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-icon"></a>
-        </div>
-      </div>
-
-      <hr>
-
-        <div class="footer-bottom">
-            <p>©2015. Todos los derechos reservados. Compañía Anónima Empresa Cines Unidos. RIF.:J-00012651-8</p>
-            <p>Desarrollado por: <strong>Avila Tek</strong></p>
-                <div class="social-icons">
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon"></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="social-icon"></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon"></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" alt="X Twitter" class="social-icon"></a>
-                </div>
-        </div>
-    </footer>
+            <div class="footer-bottom">
+                <p>©2015. Todos los derechos reservados. Compañía Anónima Empresa Cines Unidos. RIF.:J-00012651-8</p>
+                <p>Desarrollado por: <strong>Avila Tek</strong></p>
+                    <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="social-icon"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" alt="X Twitter" class="social-icon"></a>
+                    </div>
+            </div>
+        </footer>
 
 </body>
 </html>
