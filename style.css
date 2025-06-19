@@ -36,50 +36,14 @@ body {
   align-items: center;
 }
 
-/* Menu Ciudades */
 .header-right {
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 
-.dropdown {
-  position: absolute;
-}
 
-.dropdown-btn {
-  background-color: #141414;
-  color: #fff;
-  padding: 20px 20px;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.dropdown-content {
-  position: relative;
-  background-color: #f1f1f1;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px #00000033;
-  z-index: 1;
-  display: none;
-}
-
-.dropdown-content a {
-  color: #141414;
-  padding: 10px 14px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+/* Menu Ciudades */
 
 .menu-header {
   display: flex;
@@ -132,6 +96,45 @@ body {
 .menu-dropdown a:hover {
   color: #cea2b0;
 }
+
+.dropdown {
+  position: absolute;
+}
+
+.dropdown-btn {
+  background-color: #141414;
+  color: #fff;
+  padding: 20px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px #00000033;
+  z-index: 1;
+  display: none;
+}
+
+.dropdown-content a {
+  color: #141414;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
 
 /*     Main - letrero cines unidos      */
 .main-container {
@@ -404,8 +407,7 @@ hr {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    
-    /*padding: 5px;*/
+    padding: 5px;
   }
 
   .header-left,
