@@ -220,10 +220,35 @@ body {
   
 }
 
-.carousel img {
-  border-radius: 10px;
+.carousel-item {
   flex: 0 0 auto;
-  width: 150px;
+  width: 200px;
+  text-align: center;
+  color: white;
+}
+
+.carousel-item img {
+  border-radius: 10px;
+  /*flex: 0 0 auto;*/
+  width: 100%;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.05);
+}
+
+.movie-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px 0 2px;
+}
+
+.movie-info {
+  font-size: 14px;
+  color: #ccc;
+  margin: 0;
 }
 
 /*    proximos estrenos     */
