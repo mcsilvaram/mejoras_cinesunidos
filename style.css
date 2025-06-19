@@ -8,9 +8,9 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   align-items: center;
   align-content: center;
-  background: #000022;
+  background: #121213;
   color: #fff;
-  /*padding-top: 0px;*/
+  padding-top: 0px;
 }
 
 .header {
@@ -19,10 +19,10 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px 10px;
-  position: absolute;   
+  position: relative;   
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   z-index: 999;
 }
 
@@ -40,7 +40,7 @@ body {
 .header-right {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 35px;
 }
 
 .dropdown {
@@ -58,7 +58,7 @@ body {
 }
 
 .dropdown-content {
-  position: absolute;
+  position: relative;
   background-color: #f1f1f1;
   min-width: 180px;
   box-shadow: 0px 8px 16px #00000033;
@@ -203,16 +203,23 @@ body {
 
 /* scroll de catelera, prevencion y proximos estrenos */
 .carousel-container {
-  overflow-x: scroll;
+  overflow-x: auto;
+  /*padding-inline: 4px;*/
+  scroll-padding-inline: 25px; /* asegura que el scroll se alinee con el padding */
+  /*overflow-x: scroll;*/
   scroll-behavior: smooth;
 }
 
 .carousel {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  padding-inline-start: 50px;
+  padding-inline-end: 150px;
+  
 }
 
 .carousel img {
+  border-radius: 10px;
   flex: 0 0 auto;
   width: 150px;
 }
@@ -223,7 +230,7 @@ body {
   position: relative;
   padding: 30px 0;
   background: #121213;
-  background: #121213;
+  padding-inline: 16px; /* o 20px, según lo que necesites */
 }
 
 .carousel-header {
@@ -397,7 +404,7 @@ hr {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    /*padding: 5px;*/
   }
 
   .header-left,
@@ -409,14 +416,14 @@ hr {
 
   .logo img {
     height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .menu-dropdown {
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
-    padding: 10px 0;
+    padding: 5px 0;
   }
 
   .carousel img {
