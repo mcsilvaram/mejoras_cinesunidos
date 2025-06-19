@@ -163,8 +163,22 @@
                     effect: 'slide',
                 });
             </script>
+            <script>
+                document.querySelectorAll('.carousel-section').forEach((section) => {
+                    const prevBtn = section.querySelector('.carousel-prev');
+                    const nextBtn = section.querySelector('.carousel-next');
+                    const container = section.querySelector('.carousel-container');
+                
+                    prevBtn.addEventListener('click', () => {
+                    container.scrollLeft -= 300;
+                    });
 
-
+                    nextBtn.addEventListener('click', () => {
+                    container.scrollLeft += 300;
+                    });
+                });
+            </script>
+           
         <!-- Footer -->
         <footer class="footer">
         <div class="footer-container">
