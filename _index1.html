@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">     <!-- Lado izquierdo: Logo + Botón de menú -->
+   <header class="header">
+    <!-- Lado izquierdo: Logo + Botón de menú -->
     <div class="header-left">
         <div class="logo">
-        <img src="logocinesunidos1.png" alt="Logo Cines Unidos">
+            <img src="logocinesunidos1.png" alt="Logo Cines Unidos">
         </div>
-        <div class="menu-header">
-            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            <div class="menu-dropdown" id="menuDropdown">
+        <nav class="menu-header">
+            <button class="menu-btn">&#9776;</button>
+            <div class="menu-dropdown">
                 <a href="#"><i class="fa fa-home"></i><span>Inicio</span></a>
                 <a href="#"><i class="fa fa-film"></i><span>Cartelera</span></a>
                 <a href="#"><i class="fa fa-map-marker-alt"></i><span>Cines</span></a>
@@ -34,66 +34,23 @@
                 <a href="#"><i class="fa fa-envelope"></i><span>Contacto</span></a>
                 <a href="#"><i class="fa fa-sign-in-alt"></i><span>Ingresar</span></a>  
             </div>
-        </div>        
-            <script>
-                function toggleMenu() {
-                    const menu = document.getElementById("menuDropdown");
-                    if (menu.style.display === "flex") {
-                        menu.style.display = "none";
-                    } else {
-                        menu.style.display = "flex"; // <--- AQUÍ el cambio clave
-                    }
-                }
-
-                // Cerrar si se hace clic fuera
-                window.addEventListener("click", function(event) {
-                    const menuBtn = document.querySelector(".menu-btn");
-                    const dropdown = document.getElementById("menuDropdown");
-
-                    if (!menuBtn.contains(event.target) && !dropdown.contains(event.target)) {
-                    dropdown.style.display = "none";
-                    }
-                });
-            </script>
-        </div>
+        </nav>     
     </div>
-    <div class="header-right">   <!-- Lado derecho: Menú de ciudades -->
+
+    <div class="header-right">
         <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown()">Ciudad</button>
-            <div class="dropdown-content" id="ciudadesDropdown">
-                <a href="#" onclick="selectCity(this)">Caracas</a>
-                <a href="#" onclick="selectCity(this)">Maracaibo</a>
-                <a href="#" onclick="selectCity(this)">Valencia</a>
-                <a href="#" onclick="selectCity(this)">Barquisimeto</a>
-                <a href="#" onclick="selectCity(this)">Puerto La Cruz</a>
-                <a href="#" onclick="selectCity(this)">San Cristóbal</a>
+            <button class="dropdown-btn">Ciudad</button>
+            <div class="dropdown-content">
+                <a href="">Caracas</a>
+                <a href="">Maracaibo</a>
+                <a href="">Valencia</a>
+                <a href="">Barquisimeto</a>
+                <a href="">Puerto La Cruz</a>
+                <a href="">San Cristóbal</a>
             </div>
         </div>
-        <script>
-            function toggleDropdown() {
-                const dropdown = document.getElementById("ciudadesDropdown");
-                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-            }
-
-            function selectCity(element) {
-                const selectedCity = element.textContent;
-                document.querySelector(".dropdown-btn").textContent = selectedCity;
-                    // Cierra el menú automáticamente
-                document.getElementById("ciudadesDropdown").style.display = "none";
-                }
-                // Cierra el menú si haces clic fuera
-                window.addEventListener("click", function(event) {
-                const btn = document.querySelector(".dropdown-btn");
-                const menu = document.getElementById("ciudadesDropdown");
-
-                if (!btn.contains(event.target) && !menu.contains(event.target)) {
-                menu.style.display = "none";
-                }
-               });
-        </script>
     </div>
-    </header>
-
+</header>
     <main>
         <section class="main-container">
             <div class="content-overlay">
@@ -102,172 +59,473 @@
             </div>       
         </section>
 
-        <!--    Carrusel de peliculaa de Cartelera   -->
+        <section class="estrenos-section">
+            <div class="swiper estrenos-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005387.jpg" alt="Lilo & Stitch"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005411.jpg" alt="Cómo entrenar a tu dragón"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005413.jpg" alt="Encerrado"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005483.jpg" alt="Bailarina"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005476.jpg" alt="Destino Final"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00004308.jpg" alt="Caimanes"></div>
+                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/slider/HO00005544.jpg" alt="Las 2 Caras"></div>
+            </div>
+            <!-- Paginacion opcional -->
+            <div class="swiper-pagination"></div>
+            </div>
+        </section>
 
-        <section class="carousel-section">         
+<!--    Peliculas en Cartelera -->    
+        <section class="carousel-section">
             <div class="carousel-header">
                 <h2>Cartelera</h2>
                 <p class="ver-mas">+ Ver más</p>
             </div>
+            <button class="carousel-prev" data-target="#carousel-proximos"><</button>
 
-            <div class="carousel-container">
-                <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+           <div id="carousel-proximos" class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <!-- Pelicula 1  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005483.jpg" alt="Bailarina">
+                        <h4 class="movie-title">Balerina (Subtitulo)</h4>
+                        <p class="movie-info">Eve Macarro es una asesina entrenada por la Ruska Roma desde su infancia. 
+                                En esta violenta historia de venganza, Eve intentará por todos los medios averiguar quién 
+                                está detrás del asesinato de su padre.</p>
+                        <span>⭐ 4.5</span> <span> • 128 min</span> <span> • Acción</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+                    
+                    <div class="carousel-item">
+                    <!-- Pelicula 2  -->
+                    <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005495.jpg" alt="Próximo">
+                    <h4 class="movie-title">Kueka: Memoria ancestral</h4>
+                    <p class="movie-info">En una comunidad ubicada en el lugar más antiguo del planeta tierra, 
+                            al sur de Venezuela, tres generaciones del pueblo Pemón luchan por el retorno de su abuela ancestral Kowai Kueka. 
+                            Su espíritu está encarnado en una piedra de jaspe rojo.</p>
+                    <span>⭐ 3.5</span> <span> • 74 min</span> <span> • Ficción</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
 
-                <div class="carousel" id="carousel">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005483.jpg" alt="Bailarina (Esp)">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005495.jpg" alt="Kueka: Memoria Ancestral (Esp)">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005387.jpg" alt="Lilo y Stitch (Esp)">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Misión Imposible (Esp)">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005476.jpg" alt="Destino Final (Esp)">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005566.jpg" alt="Como Entrenar a tu Dragón 3D">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005553.jpg" alt="Lilo y Stitch 3D">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005226.jpg" alt="No lo escuches">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005412.jpg" alt="Dragón Sub">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005484.jpg" alt="Bailarina Sub">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005562.jpg" alt="Esquema Fenicio">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005391.jpg" alt="Misión Imposible Sub">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005477.jpg" alt="Destino Final Sub">
-                <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005555.jpg" alt="Bailarina Atmos">
-                </div>
+                    <div class="carousel-item">
+                    <!-- Pelicula 3  -->
+                    <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005387.jpg" alt="Lilo & Stitch">
+                    <h4 class="movie-title">Lilo & Stitch</h4>
+                    <p class="movie-info">Remake en imagen real de "Lilo & Stitch". Narra la historia de una niña 
+                        hawaiana solitaria y un extraterrestre fugitivo que la ayuda a recomponer su rota familia.</p>
+                    <span>⭐ 4.0</span> <span> • 108 min</span> <span> • Fantasia</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
 
-                <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+                    <div class="carousel-item">
+                        <!-- Pelicula 4  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Misión Imposible">
+                        <h4 class="movie-title">Misión Imposible (Subtitulo)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                                el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                            <span>⭐ 4.5</span> <span> • 169 min</span> • Acción</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 5  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005476.jpg" alt="Destino Final">
+                        <h4 class="movie-title">Destino final: Lazos de sangre</h4>
+                        <p class="movie-info">Acosada por una violenta pesadilla recurrente, la estudiante universitaria 
+                            Stefanie se dirige a casa para localizar a la única persona que podría ser capaz de romper el 
+                            ciclo y salvar a su familia de la espeluznante muerte.</p>
+                        <span>⭐ 4.5</span> <span> • 110 min</span></span> • Terror</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 6  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005566.jpg" alt="Cómo Entrenar a tu Dragón">
+                        <h4 class="movie-title">Cómo entrenar a tu Dragón</h4>
+                        <p class="movie-info">En la escarpada Isla Mema, donde vikingos y dragones han mantenido una amarga enemistad 
+                            durante generaciones. El ingenioso y subestimado hijo del jefe Estoico el Inmenso desafía siglos de tradición
+                            haciéndose amigo de Desdentao.</p>
+                            <span>⭐ 4.5</span> <span> • 125 min</span> • Aventuras</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 7 -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005226.jpg" alt="No lo escuches">
+                        <h4 class="movie-title">No lo escuches</h4>
+                        <p class="movie-info">Una inocente escapada a la playa acabará en trago amargo para sus jóvenes 
+                            protagonistas. Únicamente anhelaban divertirse y pasarlo bien en una pequeña parte del paraíso 
+                            caribeño criollo.</p>
+                            <span>⭐ 4.5</span> <span> • 101 min</span> • Terror</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 8  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005562.jpg" alt="Esquema">
+                        <h4 class="movie-title">Esquema</h4>
+                        <p class="movie-info">El magnate Zsa-zsa Korda es un rico empresario europeo que se ve envuelto
+                            en una trama de espionaje junto a su hija Liesl, una monja con la que mantiene una relación 
+                            difícil y a la quiere dejar el negocio familiar.</p>
+                            <span>⭐ 4.5</span> <span> • 101 min</span> • Comedia</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 9  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Misión Imposible">
+                        <h4 class="movie-title">Misión Imposible (Español)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                                el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                            <span>⭐ 4.5</span> <span> • 169 min</span> • Acción</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+                </div>                
             </div>
-                <script>
-                    function scrollCarousel(direction) {
-                    const container = document.getElementById('carousel');
-                    const scrollAmount = 200;
-                    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-                    }
-                </script>
+            <button class="carousel-next" data-target="#carousel-proximos">></button>
         </section>
 
-        <section class="estrenos-section">
-            <div class="swiper estrenos-swiper">
-                <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005555.jpg" alt="Bailarina Atmos"></div>
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005553.jpg" alt="Lilo y Stitch 3D"></div>
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005226.jpg" alt="No lo escuches"></div>
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005412.jpg" alt="Dragón Sub"></div>
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005484.jpg" alt="Bailarina Sub"></div>
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005562.jpg" alt="Esquema Fenicio"></div>
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005391.jpg" alt="Misión Imposible Sub"></div>
-                <div class="swiper-slide"><img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005477.jpg" alt="Destino Final Sub"></div>
-                </div>
+<!--  Proximos estrenos  -->
+        <section class="carousel-section">
+            <div class="carousel-header">
+                <h2>Próximos Estrenos</h2>
+                <p class="ver-mas">+ Ver más</p>
             </div>
+            <button class="carousel-prev" data-target="#carousel-proximos"><</button>
+
+            <div id="carousel-proximos" class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <!-- Pelicula 1  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005495.jpg" alt="KUEKA">
+                        <h4 class="movie-title">Kueka: Memoria ancestral</h4>
+                        <p class="movie-info">En una comunidad ubicada en el lugar más antiguo del planeta tierra, 
+                            al sur de Venezuela, tres generaciones del pueblo Pemón luchan por el retorno de su abuela ancestral Kowai Kueka. 
+                            Su espíritu está encarnado en una piedra de jaspe rojo.</p>
+                        <span>⭐ 3.5</span> <span> • 74 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 2  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005555.jpg" alt="Balerina ">
+                        <h4 class="movie-title">Bailarina - Dolby</h4>
+                        <p class="movie-info">Eve Macarro es una asesina entrenada por la Ruska Roma desde su infancia. 
+                            En esta violenta historia de venganza, Eve intentará por todos los medios averiguar quién 
+                            está detrás del asesinato de su padre.</p>
+                        <span>⭐ 4.5</span> <span> • 128 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 3  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Mision imposible">
+                        <h4 class="movie-title">Misión Imposible (Subtitulo)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                            el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                        <span>⭐ 4.5</span> <span> • 169 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 4  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005483.jpg" alt="Bailarina">
+                        <h4 class="movie-title">Balerina (Subtitulo)</h4>
+                        <p class="movie-info">Eve Macarro es una asesina entrenada por la Ruska Roma desde su infancia. 
+                            En esta violenta historia de venganza, Eve intentará por todos los medios averiguar quién 
+                            está detrás del asesinato de su padre.</p>
+                        <span>⭐ 4.5</span> <span> • 128 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 5  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005387.jpg" alt="Lilo & Stitch">
+                        <h4 class="movie-title">Lilo & Stitch</h4>
+                        <p class="movie-info">Remake en imagen real de "Lilo & Stitch". Narra la historia de una niña 
+                            hawaiana solitaria y un extraterrestre fugitivo que la ayuda a recomponer su rota familia.</p>
+                        <span>⭐ 4.0</span> <span> • 108 min</span> <span> • Fantasia</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 6  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Misión Imposible">
+                        <h4 class="movie-title">Misión Imposible (Subtitulo)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                                el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                            <span>⭐ 4.5</span> <span> • 169 min</span> • Acción</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 7  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005476.jpg" alt="Destino Final">
+                        <h4 class="movie-title">Destino final: Lazos de sangre</h4>
+                        <p class="movie-info">Acosada por una violenta pesadilla recurrente, la estudiante universitaria 
+                            Stefanie se dirige a casa para localizar a la única persona que podría ser capaz de romper el 
+                            ciclo y salvar a su familia de la espeluznante muerte.</p>
+                        <span>⭐ 4.5</span> <span> • 110 min</span></span> • Terror</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 8  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005566.jpg" alt="Cómo Entrenar a tu Dragón">
+                        <h4 class="movie-title">Cómo entrenar a tu Dragón</h4>
+                        <p class="movie-info">En la escarpada Isla Mema, donde vikingos y dragones han mantenido una amarga enemistad 
+                            durante generaciones. El ingenioso y subestimado hijo del jefe Estoico el Inmenso desafía siglos de tradición
+                            haciéndose amigo de Desdentao.</p>
+                            <span>⭐ 4.5</span> <span> • 125 min</span> • Aventuras</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 9 -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005226.jpg" alt="No lo escuches">
+                        <h4 class="movie-title">No lo escuches</h4>
+                        <p class="movie-info">Una inocente escapada a la playa acabará en trago amargo para sus jóvenes 
+                            protagonistas. Únicamente anhelaban divertirse y pasarlo bien en una pequeña parte del paraíso 
+                            caribeño criollo.</p>
+                            <span>⭐ 4.5</span> <span> • 101 min</span> • Terror</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 10  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005562.jpg" alt="Esquema">
+                        <h4 class="movie-title">Esquema</h4>
+                        <p class="movie-info">El magnate Zsa-zsa Korda es un rico empresario europeo que se ve envuelto
+                            en una trama de espionaje junto a su hija Liesl, una monja con la que mantiene una relación 
+                            difícil y a la quiere dejar el negocio familiar.</p>
+                            <span>⭐ 4.5</span> <span> • 101 min</span> • Comedia</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 11  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Misión Imposible">
+                        <h4 class="movie-title">Misión Imposible (Español)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                                el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                            <span>⭐ 4.5</span> <span> • 169 min</span> • Acción</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+                </div>                
+            </div>
+            <button class="carousel-next" data-target="#carousel-proximos">></button>
         </section>
 
-        <!-- Próximos Estrenos -->
-        <section class="carousel-section">         
-        <div class="carousel-header">
-            <h2>Próximos Estrenos</h2>
-            <p class="ver-mas">+ Ver más</p>
-        </div>
-
-        <div class="carousel-container">
-            <button class="carousel-btn left" onclick="scrollCarousel('carousel-proximos', -1)">&#10094;</button>
-
-            <div class="carousel" id="carousel-proximos">
-            <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005495.jpg" alt="Próximo 1">
-            <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005555.jpg" alt="Próximo 2">
-            <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Próximo 3">
+<!--  Prevenir  -->
+        <section class="carousel-section">
+            <div class="carousel-header">
+                <h2>Prevenir</h2>
+                <p class="ver-mas">+ Ver más</p>
             </div>
+            <button class="carousel-prev" data-target="#carousel-prevenir"><</button>
+            <div id="carousel-proximos" class="carousel-container">
+                <div class="carousel">
 
-            <button class="carousel-btn right" onclick="scrollCarousel('carousel-proximos', 1)">&#10095;</button>
-        </div>
-        </section>
+                    <div class="carousel-item">
+                        <!-- Pelicula 7  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005476.jpg" alt="Destino Final">
+                        <h4 class="movie-title">Destino final: Lazos de sangre</h4>
+                        <p class="movie-info">Acosada por una violenta pesadilla recurrente, la estudiante universitaria 
+                            Stefanie se dirige a casa para localizar a la única persona que podría ser capaz de romper el 
+                            ciclo y salvar a su familia de la espeluznante muerte.</p>
+                        <span>⭐ 4.5</span> <span> • 110 min</span></span> • Terror</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
 
-        <!-- Prevenir -->
-        <section class="carousel-section">         
-        <div class="carousel-header">
-            <h2>Prevenir</h2>
-            <p class="ver-mas">+ Ver más</p>
-        </div>
 
-        <div class="carousel-container">
-            <button class="carousel-btn left" onclick="scrollCarousel('carousel-prevenir', -1)">&#10094;</button>
+                    <div class="carousel-item">
+                        <!-- Pelicula 2  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005555.jpg" alt="Balerina ">
+                        <h4 class="movie-title">Bailarina - Dolby</h4>
+                        <p class="movie-info">Eve Macarro es una asesina entrenada por la Ruska Roma desde su infancia. 
+                            En esta violenta historia de venganza, Eve intentará por todos los medios averiguar quién 
+                            está detrás del asesinato de su padre.</p>
+                        <span>⭐ 4.5</span> <span> • 128 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
 
-            <div class="carousel" id="carousel-prevenir">
-            <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005477.jpg" alt="Prevenir 1">
-            <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005562.jpg" alt="Prevenir 2">
-            <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005387.jpg" alt="Prevenir 3">
-            </div>
+                    <div class="carousel-item">
+                        <!-- Pelicula 4  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005483.jpg" alt="Bailarina">
+                        <h4 class="movie-title">Balerina (Subtitulo)</h4>
+                        <p class="movie-info">Eve Macarro es una asesina entrenada por la Ruska Roma desde su infancia. 
+                            En esta violenta historia de venganza, Eve intentará por todos los medios averiguar quién 
+                            está detrás del asesinato de su padre.</p>
+                        <span>⭐ 4.5</span> <span> • 128 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
 
-            <button class="carousel-btn right" onclick="scrollCarousel('carousel-prevenir', 1)">&#10095;</button>
-        </div>
-        </section>
-            
+                    <div class="carousel-item">
+                        <!-- Pelicula 5  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005387.jpg" alt="Lilo & Stitch">
+                        <h4 class="movie-title">Lilo & Stitch</h4>
+                        <p class="movie-info">Remake en imagen real de "Lilo & Stitch". Narra la historia de una niña 
+                            hawaiana solitaria y un extraterrestre fugitivo que la ayuda a recomponer su rota familia.</p>
+                        <span>⭐ 4.0</span> <span> • 108 min</span> <span> • Fantasia</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 3  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Mision imposible">
+                        <h4 class="movie-title">Misión Imposible (Subtitulo)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                            el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                        <span>⭐ 4.5</span> <span> • 169 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+                 
+                    <div class="carousel-item">
+                        <!-- Pelicula 1  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005495.jpg" alt="KUEKA">
+                        <h4 class="movie-title">Kueka: Memoria ancestral</h4>
+                        <p class="movie-info">En una comunidad ubicada en el lugar más antiguo del planeta tierra, 
+                            al sur de Venezuela, tres generaciones del pueblo Pemón luchan por el retorno de su abuela ancestral Kowai Kueka. 
+                            Su espíritu está encarnado en una piedra de jaspe rojo.</p>
+                        <span>⭐ 3.5</span> <span> • 74 min</span>
+                        <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 8  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005566.jpg" alt="Cómo Entrenar a tu Dragón">
+                        <h4 class="movie-title">Cómo entrenar a tu Dragón</h4>
+                        <p class="movie-info">En la escarpada Isla Mema, donde vikingos y dragones han mantenido una amarga enemistad 
+                            durante generaciones. El ingenioso y subestimado hijo del jefe Estoico el Inmenso desafía siglos de tradición
+                            haciéndose amigo de Desdentao.</p>
+                            <span>⭐ 4.5</span> <span> • 125 min</span> • Aventuras</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 9 -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005226.jpg" alt="No lo escuches">
+                        <h4 class="movie-title">No lo escuches</h4>
+                        <p class="movie-info">Una inocente escapada a la playa acabará en trago amargo para sus jóvenes 
+                            protagonistas. Únicamente anhelaban divertirse y pasarlo bien en una pequeña parte del paraíso 
+                            caribeño criollo.</p>
+                            <span>⭐ 4.5</span> <span> • 101 min</span> • Terror</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 10  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005562.jpg" alt="Esquema">
+                        <h4 class="movie-title">Esquema</h4>
+                        <p class="movie-info">El magnate Zsa-zsa Korda es un rico empresario europeo que se ve envuelto
+                            en una trama de espionaje junto a su hija Liesl, una monja con la que mantiene una relación 
+                            difícil y a la quiere dejar el negocio familiar.</p>
+                            <span>⭐ 4.5</span> <span> • 101 min</span> • Comedia</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 6  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Misión Imposible">
+                        <h4 class="movie-title">Misión Imposible (Subtitulo)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                                el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                            <span>⭐ 4.5</span> <span> • 169 min</span> • Acción</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Pelicula 11  -->
+                        <img src="https://cinesunidosweb.blob.core.windows.net/poster/HO00005390.jpg" alt="Misión Imposible">
+                        <h4 class="movie-title">Misión Imposible (Español)</h4>
+                        <p class="movie-info">El agente Ethan Hunt continúa su misión de impedir que Gabriel controle 
+                                el tecnológicamente omnipotente programa de IA conocido como "la Entidad".</p>
+                            <span>⭐ 4.5</span> <span> • 169 min</span> • Acción</span>
+                    <button class="buy-button">Comprar Boletos</button>
+                    </div>
+                </div>    
+            <button class="carousel-next" data-target="#carousel-prevenir">></button>
+        </section>           
     </main>
-    <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-column logo-column">
-        <img src="https://stcinesunidoswebshared.blob.core.windows.net/img/logo-white.png" alt="Cines Unidos Logo" class="footer-logo">
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script> 
+                new Swiper('.estrenos-swiper', {
+                    loop: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    effect: 'slide',
+                });
+            </script>
+            <script>
+                document.querySelectorAll('.carousel-section').forEach((section) => {
+                    const prevBtn = section.querySelector('.carousel-prev');
+                    const nextBtn = section.querySelector('.carousel-next');
+                    const container = section.querySelector('.carousel-container');
+                
+                    prevBtn.addEventListener('click', () => {
+                    container.scrollLeft -= 300;
+                    });
+
+                    nextBtn.addEventListener('click', () => {
+                    container.scrollLeft += 300;
+                    });
+                });
+            </script>
+           
+        <!-- Footer -->
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column logo-column">
+            <img src="https://stcinesunidoswebshared.blob.core.windows.net/img/logo-white.png" alt="Cines Unidos Logo" class="footer-logo">
+            </div>
+
+            <div class="footer-column">
+            <p>Inicio</p>
+            <p>Caramelería</p>
+            <p>Promociones Y Precios</p>
+            <p>Contacto</p>
+            </div>
+
+            <div class="footer-column">
+            <p>Cartelera</p>
+            <p>Próximos Estrenos</p>
+            <p>Cines Unidos Club</p>
+            </div>
+
+            <div class="footer-column">
+            <p>Cines</p>
+            <p>Prevenir</p>
+            <p>Comercialización</p>
+            </div>
+
+            <div class="footer-column store-column">
+                <a href="https://www.apple.com/la/app-store/">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="store-icon"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-icon"></a>
+            </div>
         </div>
 
-        <div class="footer-column">
-        <p>Inicio</p>
-        <p>Caramelería</p>
-        <p>Promociones Y Precios</p>
-        <p>Contacto</p>
-        </div>
+        <hr>
 
-        <div class="footer-column">
-        <p>Cartelera</p>
-        <p>Próximos Estrenos</p>
-        <p>Cines Unidos Club</p>
-        </div>
+            <div class="footer-bottom">
+                <p>©2015. Todos los derechos reservados. Compañía Anónima Empresa Cines Unidos. RIF.:J-00012651-8</p>
+                <p>Desarrollado por: <strong>Avila Tek</strong></p>
+                    <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="social-icon"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" alt="X Twitter" class="social-icon"></a>
+                    </div>
+            </div>
+        </footer>
 
-        <div class="footer-column">
-        <p>Cines</p>
-        <p>Prevenir</p>
-        <p>Comercialización</p>
-        </div>
-
-        <div class="footer-column store-column">
-        <a href="https://www.apple.com/la/app-store/">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="store-icon" style="height: 40px;">
-        </a>
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-icon"></a>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="footer-bottom">
-        <p>©2015. Todos los derechos reservados. Compañía Anónima Empresa Cines Unidos. RIF.:J-00012651-8</p>
-        <p>Desarrollado por: <strong>Avila Tek</strong></p>
-        <div class="social-icons">
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="social-icon"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" alt="X Twitter" class="social-icon"></a>
-        </div>
-    </div>
-    </footer>
-
-    <!-- script de Proximos Estrenos y Prevenir -->
-    <script>
-    function scrollCarousel(id, direction) {
-        const container = document.getElementById(id);
-        const scrollAmount = 200;
-        container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
-    </script>
-    
-    <!-- script de Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Y aquí tu inicialización de Swiper -->
-    <script>
-    const swiper = new Swiper('.estrenos-swiper', {
-        loop: true,
-        autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-        },
-        slidesPerView: 1,
-        spaceBetween: 30,
-        effect: 'slide',
-    });
-    </script>
 </body>
 </html>
