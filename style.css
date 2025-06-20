@@ -223,16 +223,17 @@ body {
 .carousel-item {
   flex: 0 0 auto;
   width: 200px;
-  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
   color: white;
 }
 
 .carousel-item img {
-  border-radius: 10px;
-  /*flex: 0 0 auto;*/
   width: 100%;
-  margin-bottom: 8px;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .carousel-item img:hover {
@@ -242,13 +243,36 @@ body {
 .movie-title {
   font-size: 16px;
   font-weight: bold;
-  margin: 4px 0 2px;
+  margin-bottom: 5px;
 }
 
 .movie-info {
-  font-size: 14px;
+  font-size: 13px;
   color: #ccc;
-  margin: 0;
+  margin-bottom: 5px;
+}
+
+.movie-meta {
+  font-size: 14px;
+  color: gold;
+  margin-bottom: 8px;
+}
+
+
+.buy-button {
+  display: block;
+  margin: 10px auto;
+  background-color: red;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buy-button:hover {
+  background-color: #e60000;
 }
 
 /*    proximos estrenos     */
