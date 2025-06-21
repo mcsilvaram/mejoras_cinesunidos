@@ -56,10 +56,10 @@ body {
 }
 
 .menu-dropdown {
-  display: none;
+  display: none; 
   background-color: #141414;
   position: initial;
-  padding: 10px 10px;
+  padding
   z-index: 100;
   width: auto;
   white-space: nowrap;
@@ -73,17 +73,15 @@ body {
 .menu-dropdown a {
   color: #e9e6e7;
   text-decoration: none;
-  font-size: 12px;
-  width: 60px;
-  gap: 4px;
-  align-items: center;
-  justify-content: center;
+  font-size: 14px;
+  padding: 8px 0;
   display: flex;
-  flex-direction: column
+  align-items: center;
+  gap: 8px;
 }
 
 .menu-dropdown a i {
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .menu-dropdown a span {
@@ -445,8 +443,8 @@ hr {
     margin-bottom: 5px;
   }
   .menu-dropdown {
-    /*flex-direction: column;*/
-    flex-wrap: wrap;
+    flex-direction: column;
+    /*flex-wrap: wrap;*/
     justify-content: flex-start;
     width: 100%;
     padding: 5px 0;
