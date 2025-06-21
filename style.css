@@ -12,6 +12,7 @@ body {
   padding-top: 0px;
 }
 
+/* cabecera */
 .header {
   background-color: #141414;
   color: #fff;
@@ -58,11 +59,12 @@ body {
   display: none;
   background-color: #141414;
   position: initial;
-  padding: 15px 50px 10px 30px;
+  padding: 10px 10px;
   z-index: 100;
   width: auto;
   white-space: nowrap;
 }
+
 
 .menu-header:hover .menu-dropdown {
   display: flex;
@@ -71,27 +73,31 @@ body {
 .menu-dropdown a {
   color: #e9e6e7;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
   width: 60px;
   gap: 4px;
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: column
 }
+
 .menu-dropdown a i {
-  font-size: 24px;
+  font-size: 25px;
 }
+
 .menu-dropdown a span {
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
 }
+
 .menu-dropdown a:hover {
   color: #cea2b0;
 }
 
 .dropdown {
-  position: absolute;
+  position: relative;
+  padding-left: 20px;
 }
 
 .dropdown-btn {
@@ -111,12 +117,14 @@ body {
   z-index: 1;
   display: none;
 }
+
 .dropdown-content a {
   color: #141414;
   padding: 10px 14px;
   text-decoration: none;
   display: block;
 }
+
 .dropdown-content a:hover {
   background-color: #ddd;
 }
@@ -135,6 +143,7 @@ body {
   text-align: center;
   overflow: hidden;
 }
+
 .main-container::before {
   content: "";
   position: initial;
@@ -214,11 +223,13 @@ body {
   text-align: left;
   color: white;
 }
+
 .carousel-item img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
 .carousel-item img:hover {
   transform: scale(1.05);
 }
@@ -252,6 +263,7 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
 .buy-button:hover {
   background-color: #e60000;
 }
@@ -269,11 +281,13 @@ body {
   align-items: center;
   margin-bottom: 30px;
 }
+
 .carousel-header h2,
 .carousel-header .ver-mas {
   margin: 0;
   font-size: 28px;
 }
+
 .carousel-header .ver-mas {
   font-size: 18px;
   cursor: pointer;
@@ -283,6 +297,7 @@ body {
   overflow-x: scroll;
   scroll-behavior: smooth;
 }
+
 .carousel-container::-webkit-scrollbar {
   display: none;
 }
@@ -291,11 +306,13 @@ body {
   display: flex;
   gap: 15px;
 }
+
 .carousel img {
   border-radius: 10px;
   width: 200px;
   flex: 0 0 auto;
 }
+
 .carousel img:hover {
   transform: scale(1.05);
 }
@@ -428,6 +445,7 @@ hr {
     margin-bottom: 5px;
   }
   .menu-dropdown {
+    /*flex-direction: column;*/
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
